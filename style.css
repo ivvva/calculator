@@ -2,7 +2,7 @@ html,
 body {
   height: 100%;
   min-height: 100%;
-  font-family: 'Cute Font', cursive;
+  font-family: "Cute Font", cursive;
 }
 body {
   display: flex;
@@ -10,7 +10,7 @@ body {
   align-items: center;
   font-family: Roboto, sans-serif;
   background: linear-gradient(#737dfe, #fffffc);
-  font-family: 'Cute Font', cursive;
+  font-family: "Cute Font", cursive;
 }
 .calculator {
   box-shadow: 15px 5px 75px 10px rgba(255, 255, 252, 0.5);
@@ -30,22 +30,37 @@ body {
   mix-blend-mode: overlay;
 }
 button {
-    font-family: 'Cute Font', cursive;
-    cursor: pointer;
-    flex: 0 1 25%;
-    height: 70px;
-    color: #111;
-    font-size: 2em;
-    mix-blend-mode: overlay;
-    background-color: rgba(255, 255, 252, 1);
-    border: 1px solid rgba(60, 45, 102, 0.5);
+  font-family: "Cute Font", cursive;
+  cursor: pointer;
+  flex: 0 1 25%;
+  height: 70px;
+  color: #111;
+  font-size: 2em;
+  mix-blend-mode: overlay;
+  background-color: rgba(255, 255, 252, 1);
+  border: 1px solid rgba(60, 45, 102, 0.5);
+  transition: ease-in-out 0.3s;
 }
 .btn-large {
-    flex: 0 1 50%;
-    mix-blend-mode: overlay;
+  flex: 0 1 50%;
+  mix-blend-mode: overlay;
+  transition: ease-in-out 0.3s;
 }
 .btn-opaque {
-    mix-blend-mode: overlay;
-    background: rgba(255, 255, 255, 0.7)
+  mix-blend-mode: overlay;
+  background: rgba(255, 255, 255, 0.7);
+  transition: ease-in-out 0.3s;
 }
 
+button:hover,
+.btn-large:hover{
+    transform: scale(1.1);
+    transition: ease-in-out 0.3s;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.btn-opaque:hover{
+    transform: scale(1.1);
+    transition: ease-in-out 0.3s;
+    background: rgba(210, 196, 241, 0.7);
+}
