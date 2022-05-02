@@ -23,6 +23,7 @@ body {
   z-index: 2;
   position: relative;
   border-radius: 5px;
+  margin: 70px;
 }
 .display {
   padding: 10px;
@@ -58,7 +59,6 @@ button {
   border: 1px solid rgba(60, 45, 102, 0.5);
   transition: ease-in-out 0.3s;
   border-radius: 4px;
- 
 }
 .btn-large {
   flex: 0 1 50%;
@@ -96,23 +96,51 @@ button:hover,
   padding-top: 25px;
 }
 
-
-
-
-.calculator:hover{
+.calculator:hover {
   animation: glow 3s infinite;
   transform: scale(1.03);
   transition: ease-in-out 1s;
 }
 
-@keyframes glow {
-	0%,100% {
-    box-shadow: 15px 5px 75px 10px rgba(255, 255, 252, 0.5);;
-	}
-	50% {
-		box-shadow: 0 0 24px 4px #fffffc;
-	}
+#gato {
+  height: 200px;
+  width: 200px;
+  display: flex;
+  justify-content: right;
+  transition: ease-in-out .2s;
 }
 
+#gato:hover{
+  transform: scale(1.1);
+  transition: ease-in-out .2s;
+  animation: shake 1s infinite;
+}
 
+p{
+  font-size: 2rem;
+  font-weight: 500s;
+}
 
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 15px 5px 75px 10px rgba(255, 255, 252, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 24px 4px #fffffc;
+  }
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}

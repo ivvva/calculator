@@ -1,20 +1,20 @@
 const MAX_INPUT_LENGTH = 9;
 
-let buttons = document.getElementsByClassName("number");
 let display = document.getElementById("current-operand");
-let clearBtn = document.getElementById("clearBtn");
-let backBtn = document.getElementById("back");
 let operator = document.getElementsByClassName("operator");
 let isLastInputOperator = false;
 let currentOperator;
 let operatorPresent = false;
 
+let buttons = document.getElementsByClassName("number");
 let equalBtn = document.getElementById("equal");
 let addBtn = document.getElementById("plus");
 let substractBtn = document.getElementById("minus");
 let multiplyBtn = document.getElementById("multiply");
 let divideBtn = document.getElementById("divide");
 let remainderBtn = document.getElementById("remainder");
+let clearBtn = document.getElementById("clearBtn");
+let backBtn = document.getElementById("back");
 
 function btnConditions() {
   if (display.innerHTML.length == MAX_INPUT_LENGTH) {
@@ -168,8 +168,6 @@ function checkKeyPress(key) {
     isLastInputOperator = false;
   }
   if (key.key == "5") {
-    console.log("sanya pidoras");
-    console.log({ key });
     btnConditions();
     display.innerHTML += "5";
     isLastInputOperator = false;
@@ -199,12 +197,12 @@ function checkKeyPress(key) {
     display.innerHTML += "0";
     isLastInputOperator = false;
   }
-  if (key.key == "." || key.keyCode == ",") {
+  if (key.key == "." || key.key == ",") {
     btnConditions();
     display.innerHTML += ".";
     isLastInputOperator = false;
   }
-  if (key.key == "=" || key.keyCode == "13") {
+  if (key.key == "=" || key.key == "Enter") {
     evaluate(currentOperator);
     isLastInputOperator = false;
     operatorPresent = false;
@@ -287,3 +285,19 @@ function checkKeyPress(key) {
     currentOperator = "%";
   }
 }
+
+let gato = document.getElementById("gato");
+//let audio = document.getElementById("media/meow.wav")
+let meowAudio = new Audio("media/meow.wav");
+let purrAudio = new Audio("media/purr.mp3");
+
+gato.addEventListener("mouseenter", function () {
+  meowAudio.play();
+});
+
+gato.addEventListener("mousedown", function(){
+  purrAudio.play();
+});
+gato.addEventListener("mouseup", function(){
+  purrAudio.pause();
+});
