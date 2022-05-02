@@ -3,6 +3,8 @@ body {
   height: 100%;
   min-height: 100%;
   font-family: "Cute Font", cursive;
+  max-width: 100%;
+  max-height: 100%;
 }
 body {
   display: flex;
@@ -11,17 +13,32 @@ body {
   font-family: Roboto, sans-serif;
   background: linear-gradient(#737dfe, #fffffc);
   font-family: "Cute Font", cursive;
+  background-size: 100%;
 }
 .calculator {
   box-shadow: 15px 5px 75px 10px rgba(255, 255, 252, 0.5);
   max-width: 400px;
   mix-blend-mode: overlay;
+  transition: ease-in-out 1s;
+  z-index: 2;
+  position: relative;
+  border-radius: 5px;
 }
 .display {
   padding: 10px;
   color: #fffffc;
   font-size: 4em;
   text-align: right;
+  position: relative;
+  height: 150px;
+  max-width: 400px;
+  transition: all ease-in-out 1.6s;
+}
+.calculator:hover > .display {
+  animation: display;
+  background-color: rgba(210, 196, 241, 0.7);
+  transition: all ease-in-out 1.6s;
+  color: white;
 }
 .keyboard {
   display: flex;
@@ -40,6 +57,8 @@ button {
   background-color: rgba(255, 255, 252, 1);
   border: 1px solid rgba(60, 45, 102, 0.5);
   transition: ease-in-out 0.3s;
+  border-radius: 4px;
+ 
 }
 .btn-large {
   flex: 0 1 50%;
@@ -53,14 +72,47 @@ button {
 }
 
 button:hover,
-.btn-large:hover{
-    transform: scale(1.1);
-    transition: ease-in-out 0.3s;
-    background: rgba(255, 255, 255, 0.7);
+.btn-large:hover {
+  transform: scale(1.1);
+  transition: ease-in-out 0.3s;
+  background: rgba(255, 255, 255, 0.7);
+  animation: glow 1.5s infinite;
+  font-size: 2.3rem;
 }
 
-.btn-opaque:hover{
-    transform: scale(1.1);
-    transition: ease-in-out 0.3s;
-    background: rgba(210, 196, 241, 0.7);
+.btn-opaque:hover {
+  transform: scale(1.1);
+  transition: ease-in-out 0.3s;
+  background: rgba(210, 196, 241, 0.7);
+  animation: glow 1.5s infinite;
+  font-size: 2.3rem;
 }
+
+.display #current-operand {
+  color: white;
+  font-size: 5rem;
+  align-items: center;
+  justify-content: center;
+  padding-top: 25px;
+}
+
+
+
+
+.calculator:hover{
+  animation: glow 3s infinite;
+  transform: scale(1.03);
+  transition: ease-in-out 1s;
+}
+
+@keyframes glow {
+	0%,100% {
+    box-shadow: 15px 5px 75px 10px rgba(255, 255, 252, 0.5);;
+	}
+	50% {
+		box-shadow: 0 0 24px 4px #fffffc;
+	}
+}
+
+
+
